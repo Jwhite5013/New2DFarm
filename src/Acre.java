@@ -4,8 +4,7 @@ public class Acre{
     private double growCropPrice;
     private int growDays;
     private boolean growCheck;
-    public Acre(String cropType) {
-        this.cropType = cropType;
+    public Acre(int ha) {
         growCheck = true;
     }
 public Acre(){
