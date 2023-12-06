@@ -2,11 +2,12 @@ public class Farm {
     private Acre[][] Land;
 
     public Farm(int r, int c) {
-
+Acre[][] temp = new Acre[r][c];
+      Land = temp;
     }
 
-    public void plant(String plan, int row, int col) {
-
+    public void plant(int choice, int row, int col) {
+ Land[row][col] = new Acre(choice);
     }
 
     public String toString() {

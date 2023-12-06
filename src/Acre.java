@@ -6,6 +6,47 @@ public class Acre{
     private boolean growCheck;
     public Acre(int ha) {
         growCheck = true;
+      switch(ha){
+        case 1:
+          cropType = "Corn";
+          sellPrice = 153.00;
+          growCropPrice = 103.00;
+          growDays = 60;
+          break;
+        case 2:
+          cropType = "Potatoes";
+          sellPrice = 485.00;
+          growCropPrice = 336.00;
+          growDays = 70;
+          break;
+        case 3:
+          cropType = "Soybeans";
+          sellPrice = 9.64;
+          growCropPrice = 3.78;
+          growDays = 45;
+        case 4:
+          cropType = "Wheat";
+          sellPrice = 827.00;
+          growCropPrice = 170.00;
+          growDays = 240;
+          break;
+        case 5:
+          cropType = "Tree Nuts";
+          sellPrice = 7200.00;
+          growCropPrice = 5800.00;
+          growDays = 365;
+          break;
+        case 0:
+          cropType = "No Crop";
+          growCheck = false;
+          sellPrice = 0.0;
+          growDays = 0;
+          growCropPrice = 0.0;
+          break;
+        default:
+          System.out.println("Not a option");
+          
+      }
     }
 public Acre(){
             cropType = "No Crop";
