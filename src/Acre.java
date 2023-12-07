@@ -79,10 +79,10 @@ public Acre(){
         }
         public String toString(){
             String stuff = "";
-            stuff += "Crop: " + cropType + "\tCost: " + growCropPrice + "\tSell price: " + sellPrice;
+            stuff += "Crop: " + cropType + "\tCost: " + growCropPrice + "\tSell price: " + sellPrice + "\tDays to harvest: " + growDays;
           return stuff;
          }
-  public Int getDays(){
+  public int getDays(){
     return growDays;
   }
     }

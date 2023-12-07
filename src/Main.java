@@ -1,6 +1,8 @@
 import java.util.*;
 public class Main {
+
     public static void main(String[] args) {
+      boolean contine = true;
         Scanner scan = new Scanner(System.in);
         System.out.println("How many rows is your farm?");
         int rows = scan.nextInt();
@@ -8,7 +10,6 @@ public class Main {
         System.out.println("How many columns are there?");
         int cols = scan.nextInt();
 Farm land = new Farm(rows, cols);
-      int count = 0;
       for(int i = 0; i<land.getRowSize();i++){
         for(int j = 0; j<land.getColSize(); j++){
           showPlant(i,j);
@@ -18,7 +19,7 @@ Farm land = new Farm(rows, cols);
         }
       }
     
-  while(true){
+  while(contine){
 showMenu();
 int choice = scan.nextInt();
 switch(choice){
@@ -76,11 +77,23 @@ switch(choice){
     int days = scan.nextInt();
     land.checkDays(days);
     break;
+  case 5:
+    land.getIncome();
+    break;
+  case 6:
+    System.out.println("How many days?");
+    days = scan.nextInt();
+    land.getIncome(days);
+    break;
+  case 0:
+    contine = false;
+    break;
+
   default:
     System.out.println("Not a option. Please try again");
 } 
   }
-      
+  System.out.println("Thank you for your time");
     }//end of main
   public static void showPlant(int row, int col){
     System.out.println("1. Corn");
