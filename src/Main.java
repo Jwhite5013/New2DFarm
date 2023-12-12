@@ -6,14 +6,26 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println("How many rows is your farm?");
         int rows = scan.nextInt();
+      while(rows<=0){
+        System.out.println("That's too low of a number. Try again");
+        rows = scan.nextInt();
+      }
         scan.nextLine();
         System.out.println("How many columns are there?");
         int cols = scan.nextInt();
+      while(cols<=0){
+        System.out.println("That's too low of a number. Try again");
+        cols = scan.nextInt();
+      }
 Farm land = new Farm(rows, cols);
       for(int i = 0; i<land.getRowSize();i++){
         for(int j = 0; j<land.getColSize(); j++){
           showPlant(i,j);
          int choice = scan.nextInt();
+          while(choice<0||choice>5){
+            System.out.println("Not a option. Try again");
+            choice = scan.nextInt();
+          }
         
           land.plant(choice,i,j);
         }
@@ -68,8 +80,16 @@ switch(choice){
   case 3:
     System.out.println("Which Crop went bad? Row?");
     int row = scan.nextInt();
+    while(rows<0||rows>land.getRowSize()){
+      System.out.println("That's out of range ofyour farm Try again");
+      rows = scan.nextInt();
+    }
     System.out.println("Column?");
     int col = scan.nextInt();
+    while(col<0||col>land.getColSize()){
+      System.out.println("That's out of range ofyour farm Try again");
+      col = scan.nextInt();
+    }
     land.badPlant(row,col);
     break;
   case 4:
